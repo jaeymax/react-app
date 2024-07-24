@@ -7,7 +7,6 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useEffect, useState } from 'react';
-import './SetupProfile.css';
 import { WorkOutline } from "@mui/icons-material";
 
 const SetupProfile = () => {

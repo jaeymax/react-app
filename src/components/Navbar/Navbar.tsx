@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import './Navbar.css'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';

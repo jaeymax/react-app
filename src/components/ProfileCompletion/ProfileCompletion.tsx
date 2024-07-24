@@ -1,6 +1,5 @@
 
 import ProfileCompletionItem from '../ProfileCompletionItem/ProfileCompletionItem';
-import './ProfileCompletion.css';
 
 interface ProfileCompletionProps{
     hide:boolean;

@@ -1,8 +1,6 @@
 import { SvgIconProps } from "@mui/material"
 import React, { ReactNode } from "react"
-import './NavItem.css'
 
-type MaterialUIIcon = React.ComponentType<SvgIconProps>;
 
 interface NavItemProps{
     name:string,

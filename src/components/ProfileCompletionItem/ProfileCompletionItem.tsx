@@ -1,4 +1,3 @@
-import './ProfileCompletionItem.css'
 
 
 interface ProfileCompletionItemProps{

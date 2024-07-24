@@ -1,5 +1,4 @@
 import Navbar from "../../components/Navbar/Navbar"
-import './Home.css'
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowCircleRightSharpIcon from '@mui/icons-material/ArrowCircleRightSharp';
 import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';

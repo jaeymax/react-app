@@ -1,5 +1,5 @@
 import Header from '../../components/Header/Header'
-import './CareerStatus.css'
+
 
 const CareerStatus = () => {
   return (

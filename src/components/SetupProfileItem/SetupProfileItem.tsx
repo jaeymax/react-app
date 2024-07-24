@@ -1,5 +1,4 @@
 import { Add, WorkOutline } from '@mui/icons-material';
-import './SetupProfileItem.css';
 import { ReactNode } from 'react';
 import { IconButton } from '@mui/material';
 
