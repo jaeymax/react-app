@@ -1,0 +1,46 @@
+
+.account-type{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.account-body{
+    display: grid;
+    place-items: center;
+    flex: 1;
+}
+
+.account-content{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 30px;
+}
+
+.card-container-wrapper{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card{
+    width: 300px;
+    height: 200px;
+    border: 1px solid rgb(214, 214, 214);
+}
+
+.account-type button{
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 20px;
+}

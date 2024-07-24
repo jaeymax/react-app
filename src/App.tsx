@@ -8,6 +8,8 @@ import Education from './components/Education/Education';
 import WorkExperience from './components/WorkExperience/WorkExperience';
 import UploadResume from './components/UploadResume/UploadResume';
 import Accomplishments from './components/Accomplishments/Accomplishments';
+import AccountType from './pages/AccountType/AccountType';
+import SetupProfile from './pages/SetupProfile/SetupProfile';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path = '/work-experience' element = {<WorkExperience/>}/>
           <Route path='/upload-resume' element = {<UploadResume/>} />
           <Route  path='/accomplishments' element = {<Accomplishments/>} />
+          <Route path='/account-type' element = {<AccountType/>} />
+          <Route path='setup-profile' element = {<SetupProfile/>} />
         </Routes>
       </BrowserRouter>
     </div>

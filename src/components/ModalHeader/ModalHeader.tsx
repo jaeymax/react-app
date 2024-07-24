@@ -1,3 +1,5 @@
+import CloseIcon from '@mui/icons-material/Close';
+import { IconButton } from '@mui/material';
 
 interface ModalProps{
     name:string;
@@ -5,8 +7,11 @@ interface ModalProps{
 
 const ModalHeader:React.FC<ModalProps> = ({name}) => {
   return (
-    <div>
-       <h2>{name}</h2>
+    <div className="p-6 flex items-center justify-between border-b" >
+       <h2 className="font-bold text-xl" >{name}</h2>
+       <IconButton >
+          <CloseIcon className='text-black'/>
+       </IconButton>
     </div>
   )
 }

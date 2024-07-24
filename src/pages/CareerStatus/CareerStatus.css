@@ -1,0 +1,35 @@
+.career-status{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.career-status-body{
+    display: grid;
+    place-items: center;
+    flex: 1;
+    padding: 30px;
+
+}
+
+.career-status-content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 400px;
+}
+
+.career-status-content div{
+    border: 1px solid rgb(226, 226, 226);
+    padding: 15px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.career-status-content button{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+}

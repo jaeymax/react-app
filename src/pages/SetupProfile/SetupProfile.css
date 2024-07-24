@@ -1,0 +1,13 @@
+
+
+.setup-profile{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.setup-profile-body{
+    padding: 60px 100px;
+    display: flex;
+    gap: 60px;
+}

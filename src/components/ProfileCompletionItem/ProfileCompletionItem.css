@@ -1,0 +1,10 @@
+
+
+.profile-completion-item{
+    padding: 20px;
+    display: flex;
+    /* border: 1px dashed black; */
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+}

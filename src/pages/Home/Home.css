@@ -1,16 +1,16 @@
 
-.home{
+/* .home{
     display: flex;
     flex-direction: column;
     height: 100%;
-}
+} */
 
-header{
+/* header{
     border-bottom: 1px solid rgb(231, 231, 231);
     padding: 5px;
-}
+} */
 
-header > div{
+/* header > div{
     display: flex;
     background: rgb(241, 239, 239);
     width: 310px;
@@ -18,56 +18,55 @@ header > div{
     align-items: center;
     justify-items: space-between;
     padding: 5px;
-}
+} */
 
-header p{
+/* header p{
     font-size: small;
-}
+} */
 
-.students{
+/* .students{
     background-color: white;
     border-radius: 3px;
     border:1px solid rgb(231, 231, 231);
     padding: 8px 17px;
-}
+} */
 
-.students > p{
+/* .students > p{
     font-weight: bold;
-}
+} */
 
-.partners{
+/* .partners{
     font-weight: 500;
     padding: 8px 17px;
-}
+} */
 
-.body-container{
+/* .body-container{
     background-color: rgb(231, 231, 231);
     flex: 1;
     display: grid;
     place-items: center;
-}
+} */
 
-.body-content{
+/* .body-content{
     border: 1px solid blue;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
+} */
+/* 
 .body-container h1{
     font-size: 50px;
     font-weight: 900;
-    /* border: 1px solid red; */
     padding: 10px 0;
-}
-
+} */
+/* 
 .body-container h2{
    padding: 5px 0;
-   /* border: 1px solid yellow; */
+   
    font-weight: 800;
    font-size: 25px;
-}
+} */
 
-.body-container h2 span{
+/* .body-container h2 span{
     color: rgb(1, 141, 1);
-}
+} */
