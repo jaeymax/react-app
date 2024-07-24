@@ -1,16 +1,16 @@
-.create-account{
+/* .create-account{
     display: flex;
     flex-direction: column;
     height: 100%;
-}
+} */
 
-.create-account-body{
+/* .create-account-body{
   flex:1;
   display: grid;
   place-items: center;
-}
+} */
 
-.create-account form{
+/* .create-account form{
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -33,4 +33,4 @@
     border: 1px solid rgb(224, 224, 224);
     height: 50px;
     outline: 0;
-}
+} */

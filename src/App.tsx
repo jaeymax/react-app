@@ -10,14 +10,16 @@ import UploadResume from './components/UploadResume/UploadResume';
 import Accomplishments from './components/Accomplishments/Accomplishments';
 import AccountType from './pages/AccountType/AccountType';
 import SetupProfile from './pages/SetupProfile/SetupProfile';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-screen">
       <BrowserRouter>
         <Routes>
           <Route path ='/' element = {<Home/>}/>
           <Route path='/create-account' element = {<CreateAccount/>} />
+          <Route path = '/login' element = {<Login/>} />
           <Route path='/verify-account' element = {<VerifyAccount/>} />
           <Route path='/career-status' element = {<CareerStatus/>} />
           <Route path='/education' element = {<Education/>} />

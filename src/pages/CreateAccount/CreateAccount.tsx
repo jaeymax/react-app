@@ -1,49 +1,58 @@
 import Header from '../../components/Header/Header'
 import './CreateAccount.css'
+import {Link} from 'react-router-dom'
 
 const CreateAccount = () => {
   return (
-    <div className="create-account">
+    <div className="flex flex-col h-full">
       <Header/>
-      <div className="create-account-body">
-        <form>
-         <h1>Get started</h1>
+      <div className="flex-1 grid place-items-center p-5">
+        <form className='flex flex-col gap-8' >
+         <h1 className='font-bold text-2xl'>Get started.</h1>
           
-          <div className="form-field">
-          <label htmlFor="fullname">Full name</label>
-         <input type="text" name="fullname" id="fullname" />
-          </div>
-          <div className="form-field">
-            <label htmlFor="date-of-birth">Date of birth</label>
-         <  input type="date" name="date-of-birth" id="date-of-birth" />
-          </div>
-          <div className="form-field">
-            <label htmlFor="gender">Gender</label>
-            <select name="gender" id="gender">
-              <option value="male">Male</option>
-              <option value= "female" >Female</option>
-            </select>
-          </div>
-          <div className="form-field">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
+          <div className="flex flex-col">
+            <label htmlFor="fullname" className='text-gray-500' >Full name</label>
+            <input type="text" className='p-5 border rounded-sm outline-none h-11' name="fullname" id="fullname" />
           </div>
 
-          <div className="form-field">
-            <label htmlFor="phone-number">Phone number</label>
-            <input type="text" name="phone-number" id="phone-number" />
+          <div className='flex  gap-5 flex-col sm:flex-row '>
+
+          <div className="flex flex-col ">
+            <label htmlFor="date-of-birth" className='text-gray-500' >Date of birth</label>
+            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="fullname" id="fullname" />
           </div>
-          <div className="form-field">
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" />
+
+
+          <div className="flex flex-col">
+            <label htmlFor="gender" className='text-gray-500' >Gender</label>
+            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="gender" id="gender" />
           </div>
-          <div className="form-field">
-           
-         <input type="submit" value="Create account" />
+
+          </div>
+
+
+
+          <div className="flex flex-col">
+            <label htmlFor="email" className='text-gray-500' >Email</label>
+            <input type="email" className='rounded-sm p-5 border outline-none h-11' name="email" id="email" />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="phone-number" className='text-gray-500' >Phone number</label>
+            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="phone-number" id="phone-number" />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="password" className='text-gray-500' >Password</label>
+            <input type="password" className='rounded-sm p-5 border outline-none h-11' name="password" id="password" />
+          </div>
+
+          <div className="form-field"> 
+            <input type="submit" className='text-white cursor-pointer rounded-sm bg-black h-11 font-semibold w-full hover:bg-zinc-800' value="Create account" />
           </div>
 
           <div>
-            <p>Already signed up? <span>Log in</span></p>
+            <p className='font-normal' >Already signed up? <Link to = '/login' className='text-green-700 font-bold' >Log in</Link></p>
           </div>
         </form>
 
