@@ -1,4 +1,4 @@
-.career-status{
+/* .career-status{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -17,7 +17,7 @@
     flex-direction: column;
     gap: 25px;
     width: 400px;
-}
+} */
 
 .career-status-content div{
     border: 1px solid rgb(226, 226, 226);
@@ -26,10 +26,3 @@
     text-align: center;
 }
 
-.career-status-content button{
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 15px;
-    font-weight: bold;
-}

@@ -1,5 +1,5 @@
 
-.verify-account{
+/* .verify-account{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -15,14 +15,13 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    /* border: 1px dashed blue; */
     text-align: center;
-}
+} */
 
 .verify-account-details p{
     color: gray;
 }
-
+/* 
 .verify-account-details div{
     border: 1px solid rgb(219, 219, 219);
     border-radius: 25px;
@@ -30,12 +29,13 @@
     background: rgb(247, 247, 247);
     width: 200px;
     margin: auto;
-}
+} */
 
-.verify-account-details h5{
+/* .verify-account-details h5{
     color: rgb(97, 97, 97);
 }
 
 .verify-account-details h6{
-    color: green;
+    color: green; 
 }
+*/
