@@ -3,6 +3,7 @@ import CareerStatusItem from '../components/CareerStatusItem'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import { careerStatuses } from '../data/careerStatuses';
+import StandardButton from '../components/StandardButton';
 
 const CareerStatus = () => {
 
@@ -16,7 +17,10 @@ const CareerStatus = () => {
       navigate('/setup-profile');
   }
 
-  
+  const isButtonDisabled = () =>{
+    if(selectedStatus ==  null)return true;
+    return false;
+  }
 
   return (
     <div className='flex flex-col h-full'>
@@ -35,7 +39,13 @@ const CareerStatus = () => {
                 />
               ))
             }
-            <button onClick={handleClick} className='font-bold text-white bg-black p-4 max-sm:absolute max-sm:left-0 max-sm:right-0 max-sm:bottom-5'>Continue</button>
+
+            <StandardButton
+              onClick={handleClick}
+              name='Continue'
+              styles='font-bold w-full text-white bg-black p-4 max-sm:absolute max-sm:left-0 max-sm:right-0 max-sm:bottom-5'
+              disabled = {isButtonDisabled()}
+            />
         </div>
       </div>
     </div>
