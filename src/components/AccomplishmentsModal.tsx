@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ModalHeader from "./ModalHeader";
-import StandardButton from "./StandardButton";
+import CustomButton from "./CustomButton";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 import FormatItalicIcon from "@mui/icons-material/FormatItalic";
@@ -9,12 +9,16 @@ import Modal from "./Modal";
 
 interface ModalProps {
   closeModal: () => void;
+  setAccomplishmentsComplete:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Accomplishments: React.FC<ModalProps> = ({ closeModal }) => {
+const Accomplishments: React.FC<ModalProps> = ({ closeModal, setAccomplishmentsComplete }) => {
   const [accomplishments, setAccomplishments] = useState("");
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    setAccomplishmentsComplete(true);
+    closeModal();
+  };
 
   return (
     <Modal name={"Add Accomplishments"} closeModal={closeModal}>
@@ -40,7 +44,7 @@ const Accomplishments: React.FC<ModalProps> = ({ closeModal }) => {
           </div>
 
           <div>
-            <StandardButton
+            <CustomButton
               styles="text-white bg-black font-bold w-28 rounded-sm h-14 float-right"
               name="Save"
               disabled={accomplishments === "" ? true : false}
@@ -50,7 +54,6 @@ const Accomplishments: React.FC<ModalProps> = ({ closeModal }) => {
         </div>
       </div>
     </Modal>
-
   );
 };
 
