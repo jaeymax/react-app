@@ -91,7 +91,7 @@ const SetupProfile = () => {
          {!isSmallScreen && <ProfileCompletion hide = {false} />}
           
 
-          <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-[350px]" >
+          <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-0" >
             <h2 className="font-bold text-2xl" >Set up your profile.</h2>
             {isSmallScreen && <ProfileCompletion fullWidth = {true} hide = {true}/>}
             <div className="profile-items flex flex-col gap-5">
