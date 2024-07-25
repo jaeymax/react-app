@@ -80,7 +80,7 @@ const SetupProfile = () => {
   }, []);
 
   const isButtonDisabled = () =>{
-    return !educationComplete && workExperienceComplete && uploadComplete && accomplishmentsComplete;
+    return !(educationComplete && workExperienceComplete && uploadComplete && accomplishmentsComplete);
   }
 
   const handleClick = () =>{
@@ -170,7 +170,7 @@ const SetupProfile = () => {
               // styles="font-bold border flex-1 text-white bg-black rounded-sm hover:bg-zinc-800 cursor-pointer"
               styles="text-white bg-black font-bold w-28 rounded-sm flex-1"
               name="Done"
-              disabled={true}
+              disabled={isButtonDisabled()}
               onClick={handleClick}
             />
           </div>
