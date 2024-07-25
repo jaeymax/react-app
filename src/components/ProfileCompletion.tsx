@@ -3,12 +3,13 @@ import ProfileCompletionItem from './ProfileCompletionItem';
 
 interface ProfileCompletionProps{
     hide:boolean;
+    fullWidth?:boolean;
 }
 
-const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide}) => {
+const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth}) => {
 
   return (
-    <div className="profile-completion w-[350px] bg-green-700 h-fit rounded-sm " > 
+    <div className={`profile-completion w-[350px] bg-green-700 h-fit rounded-sm ${fullWidth?'w-full':''}`} > 
       <div className="profile-completion-header p-5 text-white text-xl" >
          <h2 className='font-bold' >Profile Completion</h2>
       </div>

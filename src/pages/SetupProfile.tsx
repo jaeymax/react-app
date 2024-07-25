@@ -93,7 +93,7 @@ const SetupProfile = () => {
 
           <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-[350px]" >
             <h2 className="font-bold text-2xl" >Set up your profile.</h2>
-            {isSmallScreen && <ProfileCompletion hide = {true}/>}
+            {isSmallScreen && <ProfileCompletion fullWidth = {true} hide = {true}/>}
             <div className="profile-items flex flex-col gap-5">
                <SetupProfileItem openModal={openEducationModal} icon = {<LibraryBooksIcon fontSize="large" />}  name="Education" info = "School info, field of study"/>
                <SetupProfileItem openModal={openWorkExperienceModal} icon = {<WorkOutline fontSize="large" className="text-green-700" />} name="Work Experience" info="Where you've worked your role" />
