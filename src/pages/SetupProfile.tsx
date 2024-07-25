@@ -8,10 +8,11 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { useEffect, useState } from 'react';
 import { WorkOutline } from "@mui/icons-material";
-import Education from "../components/Education";
-import WorkExperience from "../components/WorkExperience";
-import Accomplishments from "../components/Accomplishments";
-import UploadResume from "../components/UploadResume";
+import EducationModal from "../components/EducationModal";
+import WorkExperienceModal from "../components/WorkExperienceModal";
+import AccomplishmentsModal from "../components/AccomplishmentsModal";
+import UploadResumeModal from "../components/UploadResumeModal";
+import StandardButton from "../components/StandardButton";
 
 
 const SetupProfile = () => {
@@ -26,13 +27,13 @@ const SetupProfile = () => {
 
   const [uploadModal, setUploadModal] = useState(false);
 
-  const [workExperienceProfile, setWorkExperienceProfile] = useState(false);
+  const [workExperienceComplete, setWorkExperienceComplete] = useState(false);
 
-  const [educationProfile, setEducationProfile] = useState(false);
+  const [educationComplete, setEducationComplete] = useState(true);
 
-  const [accomplishmentsProfile, setAccomplishmentsProfile] = useState(false);
+  const [accomplishmentsComplete, setAccomplishmentsComplete] = useState(false);
 
-  const [uploadProfile, setUpLoadProfile] = useState(false);
+  const [uploadComplete, setUpLoadComplete] = useState(false);
 
   
 
@@ -87,9 +88,12 @@ const SetupProfile = () => {
   return (
     <div className="flex flex-col h-full relative" >
        <Header/>
-       <div className="flex gap-14 py-14 px-5">
-         {!isSmallScreen && <ProfileCompletion hide = {false} />}
-          
+       <div className="flex gap-14 py-14 px-10">
+         {!isSmallScreen && <ProfileCompletion isEducationComplete = {educationComplete} isWorkExperienceComplete = {workExperienceComplete} isAccomplishmentsComplete = {accomplishmentsComplete} isUploadComplete = {uploadComplete} hide = {false} />}
+          {educationModal && <EducationModal closeModal = {closeEducationModal}/>}
+          {workExperienceModal && <WorkExperienceModal closeModal = {closeWorkExperienceModal} />}
+          {accomplishmentsModal && <AccomplishmentsModal closeModal = {closeAccomplishmentsModal} />}
+          {uploadModal && <UploadResumeModal closeModal = {closeUploadModal} />}
 
           <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-0" >
             <h2 className="font-bold text-2xl" >Set up your profile.</h2>
@@ -103,8 +107,8 @@ const SetupProfile = () => {
                <SetupProfileItem openModal={openUploadModal} icon = {<CloudUploadIcon fontSize="large" className="text-gray-400" />} name="Upload Resume" info="CV, portfolio"  />
             </div>
             <div className="flex justify-between gap-5">
-              <button className="font-bold p-4 border flex-1 rounded-sm hover:bg-gray-50">I'll do it later</button>
-              <button className="font-bold border flex-1 text-white bg-black rounded-sm hover:bg-zinc-800" >Done</button>
+              <StandardButton styles="font-bold p-4 border w-full flex-1 rounded-sm hover:bg-gray-50" name="I'll do it later" disabled = {false} onClick={()=>{}} />
+              <StandardButton styles="font-bold border flex-1 text-white bg-black rounded-sm hover:bg-zinc-800" name="Done" disabled = {false} onClick={()=>{}} />
             </div>
           </div>
        </div>

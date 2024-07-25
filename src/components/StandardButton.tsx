@@ -9,7 +9,7 @@ interface StandardButtonProps{
 
 const StandardButton:React.FC<StandardButtonProps> = ({disabled, onClick, name, styles}) => {
   return (
-    <div>
+ 
           <button 
           disabled = {disabled} 
           onClick={onClick} 
@@ -17,7 +17,7 @@ const StandardButton:React.FC<StandardButtonProps> = ({disabled, onClick, name, 
           >
             {name}
          </button>
-    </div>
+   
   )
 }
 

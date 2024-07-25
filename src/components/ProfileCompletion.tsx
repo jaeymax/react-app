@@ -4,22 +4,26 @@ import ProfileCompletionItem from './ProfileCompletionItem';
 interface ProfileCompletionProps{
     hide:boolean;
     fullWidth?:boolean;
+    isEducationComplete?:boolean;
+    isWorkExperienceComplete?:boolean;
+    isAccomplishmentsComplete?:boolean;
+    isUploadComplete?:boolean;
 }
 
-const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth}) => {
+const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth, isEducationComplete, isWorkExperienceComplete, isAccomplishmentsComplete, isUploadComplete}) => {
 
   return (
-    <div className={`profile-completion w-[350px] bg-green-700 h-fit rounded-sm ${fullWidth?'w-full':''}`} > 
-      <div className="profile-completion-header p-5 text-white text-xl" >
+    <div className={`profile-completion w-[350px] custom-green h-fit rounded-sm ${fullWidth?'w-full':''}`} > 
+      <div className="px-5 py-8 text-white text-xl" >
          <h2 className='font-bold' >Profile Completion</h2>
       </div>
       <div className={`profile-completion-list ${hide?'hidden':''}`}>
-          <ProfileCompletionItem name = 'Education'/>
-          <ProfileCompletionItem name = 'Work Experience' />
-          <ProfileCompletionItem name = 'Interest & Skills' />
+          <ProfileCompletionItem name = 'Education'  isProfileComplete = {isEducationComplete} />
+          <ProfileCompletionItem name = 'Work Experience' isProfileComplete = {isWorkExperienceComplete} />
+          <ProfileCompletionItem name = 'Interest & Skills'  />
           <ProfileCompletionItem name = 'Certifications' />
-          <ProfileCompletionItem name = 'Accomplishments' />
-          <ProfileCompletionItem name = 'Upload Resume' />
+          <ProfileCompletionItem name = 'Accomplishments' isProfileComplete = {isAccomplishmentsComplete} />
+          <ProfileCompletionItem name = 'Upload Resume' isProfileComplete = {isUploadComplete} />
       </div>
     </div>
   )
