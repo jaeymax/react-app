@@ -1,0 +1,1 @@
+export const careerStatuses = ['Still in school', 'Currently doing National Service', 'Done With National Service', 'Experienced Professional']

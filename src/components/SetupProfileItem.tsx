@@ -3,12 +3,18 @@ import { ReactNode } from 'react';
 import { IconButton } from '@mui/material';
 
 interface SetupProfileProps{
-    icon:ReactNode
+    icon:ReactNode,
     name:string,
-    info:string;
+    info:string,
+    openModal:()=>void;
 }
 
-const SetupProfileItem:React.FC<SetupProfileProps> = ({icon, name, info}) => {
+const SetupProfileItem:React.FC<SetupProfileProps> = ({icon, name, info, openModal}) => {
+
+  const handleClick = () =>{
+       openModal();
+  }
+
   return (
     <div className='setup-profile-item flex flex-row gap-4 '> 
       {icon}
@@ -17,7 +23,7 @@ const SetupProfileItem:React.FC<SetupProfileProps> = ({icon, name, info}) => {
             <h3 className='font-bold' >{name}</h3>
             <p className='text-gray-500' >{info}</p>
          </div>
-         <IconButton >
+         <IconButton onClick={handleClick} >
          <Add className='' />
          </IconButton>
       </div>

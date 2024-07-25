@@ -2,15 +2,20 @@ import Header from "../components/Header"
 import Card from "../components/Card"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
+import StandardButton from "../components/StandardButton";
+import { cards } from "../data/cards";
 
 const AccountType = () => {
 
   let navigate = useNavigate();
-  
-  const [candidate, setCandidate] = useState(false);
-  const [employer, setEmployer] = useState(false);
-  const [mentor, setMentor] = useState(false);
-  const [trainer, setTrainer] = useState(false);
+
+  const [selectedCard, setSelectedCard] = useState<number|null>(null);
+
+  const isButtonDisabled = () =>{
+      if(selectedCard == null)return true;
+      return false;
+  }
+
 
 
   const handleClick = () =>{
@@ -26,12 +31,28 @@ const AccountType = () => {
            <h2 className="font-bold text-3xl" >What type of account are you setting up?</h2>
            <div className="flex flex-col gap-12" >
            <div className="grid gap-7 mx-auto grid-cols-1 sm:grid-cols-2" >
-            <Card isClicked = {candidate} updateClicked={setCandidate} imageUrl="https://cdn-icons-png.flaticon.com/512/4470/4470321.png" accountType="Candidate" info="A gruaduate looking for an employment opportunity" comingSoon = {false} />
-            <Card isClicked = {employer} updateClicked={setEmployer} imageUrl="https://cdn-icons-png.flaticon.com/512/1693/1693866.png" accountType="Employer" info="An organisation looking to hire top talents" comingSoon = {false} />
-            <Card isClicked = {mentor} updateClicked={setMentor} imageUrl="https://cdn-icons-png.flaticon.com/512/2643/2643491.png" accountType="Mentor" info="A professional helping others to navigate their careers"comingSoon = {true} />
-            <Card isClicked ={trainer} updateClicked={setTrainer} imageUrl="https://cdn-icons-png.flaticon.com/512/12620/12620295.png" accountType="Trainee"  info="An organisation offering training programs" comingSoon = {true} />
+            {
+              cards.map((card, index)=>(
+                <Card
+                  key={index}
+                  accountType= {card.accountType}
+                  imageUrl={card.imageUrl}
+                  info={card.info}
+                  comingSoon = {card.comingSoon}
+                  isSelected = {index === selectedCard}
+                  updateSelectedCard={setSelectedCard}
+                  index={index}
+                />
+              ))
+            }
+           
            </div>
-           <button className="p-5 bg-black text-white w-full" onClick={handleClick} >Next</button>
+           <StandardButton
+              styles="p-5 bg-black text-white font-bold w-full"
+              onClick={handleClick}
+              name="Next"
+              disabled = {isButtonDisabled()}
+           />
            </div>
          </div>
       </div>

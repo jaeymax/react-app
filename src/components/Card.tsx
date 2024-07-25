@@ -8,23 +8,24 @@ import React from 'react'
 //300px 200px 
 // 
 interface CardProps{
+    index:number,
     accountType:string,
     info:string;
     comingSoon:boolean;
     imageUrl:string;
-    isClicked:boolean;
-    updateClicked:React.Dispatch<React.SetStateAction<boolean>>;
+    isSelected:boolean;
+    updateSelectedCard:React.Dispatch<React.SetStateAction<number|null>>;
 }
 
-const Card:React.FC<CardProps> = ({accountType, info, comingSoon, imageUrl, isClicked, updateClicked}) => {
+const Card:React.FC<CardProps> = ({index, accountType, info, comingSoon, imageUrl, isSelected, updateSelectedCard}) => {
 
 
   const handleClick = () =>{
-     updateClicked(!isClicked);
+     updateSelectedCard(index);
   }
 
   return (
-    <div onClick={handleClick} className={` ${isClicked?'bg-gray-100':''} flex flex-col gap-4 relative p-5 border cursor-pointer hover:bg-gray-50`}>
+    <div onClick={handleClick} className={` ${isSelected?'bg-gray-100':''} flex flex-col gap-4 relative p-5 border cursor-pointer hover:bg-gray-50`}>
       <div className='w-10 h-10' >
         <img className='w-full h-full object-contain' src={imageUrl} alt="" />
       </div>
