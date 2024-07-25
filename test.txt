@@ -1,0 +1,10 @@
+
+
+full name -> string
+date-of-birth -> date
+gender-string Male or Female
+email -> string
+phone-number -> string
+password -> string
+account-type -> string;
+career-status -> string in school;

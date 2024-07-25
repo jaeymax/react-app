@@ -1,5 +1,5 @@
 
-import ProfileCompletionItem from '../ProfileCompletionItem/ProfileCompletionItem';
+import ProfileCompletionItem from './ProfileCompletionItem';
 
 interface ProfileCompletionProps{
     hide:boolean;
@@ -8,7 +8,7 @@ interface ProfileCompletionProps{
 const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide}) => {
 
   return (
-    <div className="profile-completion w-[350px] bg-green-700 h-fit  " > 
+    <div className="profile-completion w-[350px] bg-green-700 h-fit rounded-sm " > 
       <div className="profile-completion-header p-5 text-white text-xl" >
          <h2 className='font-bold' >Profile Completion</h2>
       </div>

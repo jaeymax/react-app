@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar/Navbar"
+import Navbar from "../components/Navbar"
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowCircleRightSharpIcon from '@mui/icons-material/ArrowCircleRightSharp';
 import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';
@@ -17,8 +17,8 @@ const Home = () => {
          </div>
       </header>
          <Navbar/>
-      <div className="bg-gray-100 flex-1 grid place-items-center p-10">
-        <div className="flex flex-col gap-5" >
+      <div className="bg-gray-100 flex-1 px-10 py-20 ">
+        <div className="flex flex-col gap-5  max-w-[700px] mx-auto w-full" >
           <h1 className="py-3 text-5xl font-extrabold" >Discover a greater you</h1>
           <h2 className="py-1 font-bold text-2xl" >We help you <span className="text-green-700 " >find perfect job.</span></h2>
           <div className="flex items-center rounded-full bg-white p-3 hidden sm:flex">

@@ -1,6 +1,6 @@
-import Header from "../../components/Header/Header"
-import ProfileCompletion from "../../components/ProfileCompletion/ProfileCompletion"
-import SetupProfileItem from "../../components/SetupProfileItem/SetupProfileItem";
+import Header from "../components/Header"
+import ProfileCompletion from "../components/ProfileCompletion"
+import SetupProfileItem from "../components/SetupProfileItem";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
@@ -12,6 +12,50 @@ import { WorkOutline } from "@mui/icons-material";
 const SetupProfile = () => {
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  const [workExperience, setWorkExperience] = useState(false);
+
+  const [education, setEducation] = useState(false);
+
+  const [accomplishments, setAccomplishments] = useState(false);
+
+  const [upload, setUpload] = useState(false);
+
+
+  const openWorkExperienceModal = () =>{
+     setWorkExperience(true);
+  }
+
+  const openEducationModal = () =>{
+    setEducation(true);
+  }
+
+  const openAccomplishmentsModal = () =>{
+    setAccomplishments(true);
+  }
+
+  const openUploadModal = () =>{
+    setUpload(true);
+  }
+
+
+  const closeWorkExperienceModal = () =>{
+    setWorkExperience(false);
+ }
+
+ const closeEducationModal = () =>{
+   setEducation(false);
+ }
+
+ const closeAccomplishmentsModal = () =>{
+   setAccomplishments(false);
+ }
+
+ const closeUploadModal = () =>{
+   setUpload(false);
+ }
+
+
 
   useEffect(()=>{
 

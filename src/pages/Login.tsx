@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
+import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 
 
@@ -8,7 +8,7 @@ const Login = () => {
     <div className='flex flex-col h-full' >
       <Header/>
       <div className="flex-1 grid place-items-center p-5 ">
-        <form className='flex flex-col gap-8  ' >
+        <form className='flex flex-col gap-8 ' >
          <h1 className='font-bold text-2xl'>Get started.</h1>
           
 
@@ -23,7 +23,7 @@ const Login = () => {
           </div>
 
           <div className="form-field"> 
-            <input type="submit" className='text-white cursor-pointer rounded-sm bg-black h-11 font-semibold w-full hover:bg-zinc-800' value="Create account" />
+            <input type="submit" className='text-white cursor-pointer rounded-sm bg-black h-11 font-semibold w-full hover:bg-zinc-800' value="Log in" />
           </div>
 
           <div>

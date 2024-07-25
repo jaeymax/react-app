@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import NavItem from '../NavItem/NavItem';
+import NavItem from './NavItem';
 import { IconButton } from '@mui/material';
 
 

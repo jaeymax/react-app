@@ -1,12 +1,22 @@
-import Header from '../../components/Header/Header'
-import {Link} from 'react-router-dom'
+import { FormEvent } from 'react';
+import Header from '../components/Header'
+import {Link, useNavigate} from 'react-router-dom'
 
 const CreateAccount = () => {
+
+  let navigate = useNavigate();
+
+  const handleSubmit = (e:FormEvent)=>{
+    e.preventDefault();
+
+    navigate('/account-type');
+  }
+
   return (
     <div className="flex flex-col h-full">
       <Header/>
       <div className="flex-1 grid place-items-center p-5">
-        <form className='flex flex-col gap-8' >
+        <form className='flex flex-col gap-8 max-w-[600px] mx-auto w-full' onSubmit={handleSubmit} >
          <h1 className='font-bold text-2xl'>Get started.</h1>
           
           <div className="flex flex-col">
@@ -18,7 +28,7 @@ const CreateAccount = () => {
 
           <div className="flex flex-col ">
             <label htmlFor="date-of-birth" className='text-gray-500' >Date of birth</label>
-            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="fullname" id="fullname" />
+            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="date-of-birth" id="date-of-birth" />
           </div>
 
 
