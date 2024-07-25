@@ -23,8 +23,10 @@ const Education = () => {
 
   }
 
+  // absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2  w-4/5
+
   return (
-    <div className="flex flex-col  bg-white rounded-md absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2  w-4/5" >
+    <div className="flex flex-col  bg-white rounded-md " >
         <ModalHeader name="Add Education" />
         <div className="p-10 flex flex-col gap-5 ">
           <div className="flex flex-col w-full" >

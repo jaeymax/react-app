@@ -90,7 +90,7 @@ const SetupProfile = () => {
        <div className="flex gap-14 py-14 px-5">
          {!isSmallScreen && <ProfileCompletion hide = {false} />}
           
-          <Education/>
+
           <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-[350px]" >
             <h2 className="font-bold text-2xl" >Set up your profile.</h2>
             {isSmallScreen && <ProfileCompletion hide = {true}/>}
