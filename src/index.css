@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   box-sizing: border-box;
 }
@@ -24,7 +24,7 @@ input[type="checkbox"].custom-checkbox:checked {
 }
 
 input[type="checkbox"].custom-checkbox:checked::after {
-  content: '';
+  content: "";
   display: block;
   width: 0.75rem;
   height: 0.75rem;
@@ -36,6 +36,11 @@ input[type="checkbox"].custom-checkbox:checked::after {
   transform: translateY(-50%);
 }
 
-.custom-green{
+.custom-green {
   background: rgb(12, 134, 83);
 }
+
+.MuiSvgIcon-root.arrow-right {
+  font-size: 60px !important;
+}
+

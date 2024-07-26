@@ -40,10 +40,12 @@ const CareerStatus = () => {
 
           <StandardButton
             onClick={handleClick}
-            name="Continue"
+   
             styles="font-bold w-full text-white bg-black p-4 max-sm:absolute max-sm:left-0 max-sm:right-0 max-sm:bottom-5"
             disabled={isButtonDisabled()}
-          />
+          >
+            Continue
+          </StandardButton>
         </div>
       </div>
     </div>

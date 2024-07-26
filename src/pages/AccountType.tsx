@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import StandardButton from "../components/CustomButton";
 import { cards } from "../data/cards";
+import { ArrowForward } from "@mui/icons-material";
 
 const AccountType = () => {
   let navigate = useNavigate();
@@ -43,11 +44,18 @@ const AccountType = () => {
               ))}
             </div>
             <StandardButton
-              styles="p-5 bg-black text-white font-bold w-full"
+              styles="p-5 bg-black h-12 text-white font-bold w-full flex items-center justify-between"
               onClick={handleClick}
-              name="Next"
+             
               disabled={isButtonDisabled()}
-            />
+            >
+              <div className=" flex items-center gap-3 mx-auto">
+               
+                  <p>Next</p>
+                  <ArrowForward/>
+      
+              </div>
+            </StandardButton>
           </div>
         </div>
       </div>

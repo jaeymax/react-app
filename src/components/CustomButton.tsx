@@ -1,24 +1,25 @@
 import React, { MouseEventHandler } from 'react'
 
-interface StandardButtonProps{
+interface CustomButtonProps{
     disabled:boolean;
     onClick:MouseEventHandler;
-    name:string;
+    // name:string;
     styles:string;
+    children:React.ReactNode;
 }
 
-const StandardButton:React.FC<StandardButtonProps> = ({disabled, onClick, name, styles}) => {
+const CustomButton:React.FC<CustomButtonProps> = ({disabled, onClick,  styles, children}) => {
   return (
  
           <button 
           disabled = {disabled} 
           onClick={onClick} 
-          className={`${styles} ${disabled?'bg-gray-300':''}`} 
+          className={`${styles} rounded-sm ${disabled?'bg-gray-300':''}`} 
           >
-            {name}
+            {children}
          </button>
    
   )
 }
 
-export default StandardButton;
+export default CustomButton;

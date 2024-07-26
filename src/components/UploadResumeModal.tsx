@@ -47,9 +47,10 @@ const UploadResume: React.FC<ModalProps> = ({ closeModal, setUploadComplete }) =
         <CustomButton
           styles="text-white bg-black font-bold w-28 rounded-sm h-14 float-right"
           disabled={!allFilesUploaded()}
-          name="Save"
           onClick={handleClick}
-        />
+        >
+          Save
+        </CustomButton>
       </div>
     </Modal>
   );

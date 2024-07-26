@@ -2,6 +2,7 @@ import { FormEvent } from 'react';
 import Header from '../components/Header'
 import {Link, useNavigate} from 'react-router-dom'
 
+
 const CreateAccount = () => {
 
   let navigate = useNavigate();
@@ -14,27 +15,27 @@ const CreateAccount = () => {
 
   return (
     <div className="flex flex-col h-full">
-      <Header/>
+      <Header hasBackArrow = {true} />
       <div className="flex-1 grid place-items-center p-5">
         <form className='flex flex-col gap-8 max-w-[600px] mx-auto w-full' onSubmit={handleSubmit} >
          <h1 className='font-bold text-2xl'>Get started.</h1>
           
           <div className="flex flex-col">
             <label htmlFor="fullname" className='text-gray-500' >Full name</label>
-            <input type="text" className='p-5 border rounded-sm outline-none h-11' name="fullname" id="fullname" />
+            <input required type="text" className='p-5 border rounded-sm outline-none h-11' name="fullname" id="fullname" />
           </div>
 
           <div className='flex  gap-5 flex-col sm:flex-row '>
 
           <div className="flex flex-col ">
             <label htmlFor="date-of-birth" className='text-gray-500' >Date of birth</label>
-            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="date-of-birth" id="date-of-birth" />
+            <input required type="text" className='rounded-sm p-5 border outline-none h-11' name="date-of-birth" id="date-of-birth" />
           </div>
 
 
           <div className="flex flex-col">
             <label htmlFor="gender" className='text-gray-500' >Gender</label>
-            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="gender" id="gender" />
+            <input required type="text" className='rounded-sm p-5 border outline-none h-11' name="gender" id="gender" />
           </div>
 
           </div>
@@ -43,17 +44,17 @@ const CreateAccount = () => {
 
           <div className="flex flex-col">
             <label htmlFor="email" className='text-gray-500' >Email</label>
-            <input type="email" className='rounded-sm p-5 border outline-none h-11' name="email" id="email" />
+            <input required type="email" className='rounded-sm p-5 border outline-none h-11' name="email" id="email" />
           </div>
 
           <div className="flex flex-col">
             <label htmlFor="phone-number" className='text-gray-500' >Phone number</label>
-            <input type="text" className='rounded-sm p-5 border outline-none h-11' name="phone-number" id="phone-number" />
+            <input required type="text" className='rounded-sm p-5 border outline-none h-11' name="phone-number" id="phone-number" />
           </div>
 
           <div className="flex flex-col">
             <label htmlFor="password" className='text-gray-500' >Password</label>
-            <input type="password" className='rounded-sm p-5 border outline-none h-11' name="password" id="password" />
+            <input required type="password" className='rounded-sm p-5 border outline-none h-11' name="password" id="password" />
           </div>
 
           <div className="form-field"> 

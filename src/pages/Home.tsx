@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar"
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowCircleRightSharpIcon from '@mui/icons-material/ArrowCircleRightSharp';
 import ExpandMoreSharpIcon from '@mui/icons-material/ExpandMoreSharp';
+import { IconButton } from "@mui/material";
 
 const Home = () => {
   return (
@@ -21,28 +22,36 @@ const Home = () => {
         <div className="flex flex-col gap-5  max-w-[700px] mx-auto w-full" >
           <h1 className="py-3 text-5xl font-extrabold" >Discover a greater you</h1>
           <h2 className="py-1 font-bold text-2xl" >We help you <span className="text-green-700 " >find perfect job.</span></h2>
-          <div className="flex items-center rounded-full bg-white p-3 hidden sm:flex">
-            <div className="flex gap-4 items-center" >
+          <div className="flex items-center rounded-full bg-white  hidden sm:flex py-2">
+          <div className="flex items-center bg-white h-10 rounded-l-full px-2 min-w-0" >
+            <IconButton>
               <SearchIcon fontSize="large" className="text-gray-500" />
-              <input type="text" className="border-none  outline-none" autoComplete="off" name="search" id="search" placeholder="Try Civil Engineer" />
-            </div>
-            <div className="flex gap-4 items-center" >
-              <input type="text" className="outline-none px-5 border-r-0 border-l-2" name="jobs" id="jobs" />
-              <ExpandMoreSharpIcon/>
-              <ArrowCircleRightSharpIcon fontSize="large" className="text-green-700 "/>
-            </div>
+            </IconButton>
+              <input type="text" className="border-none p-1 flex-1 min-w-0 outline-none" autoComplete="off" name="search" id="search" placeholder="Try Civil Engineer" />
+          </div>
+          <div className="flex gap-4 min-w-0 h-10 rounded-r-full px-2 items-center justify-between bg-white border-l-2 border-gray-200" >
+              <input placeholder="Jobs" type="text" className="min-w-0 p-1 outline-none px-5" name="jobs" id="jobs" />
+             
+                <ExpandMoreSharpIcon fontSize="large" className="cursor-pointer" />
+                <ArrowCircleRightSharpIcon className="text-green-700 cursor-pointer arrow-right" fontSize="large" />
+            
+          </div>
           </div>
           <div className="flex-col gap-5 flex sm:hidden" >
-          <div className="flex gap-4 items-center bg-white rounded-full p-3" >
+          <div className="flex items-center bg-white rounded-full px-2" >
+            <IconButton>
               <SearchIcon fontSize="large" className="text-gray-500" />
-              <input type="text" className="border-none  outline-none" autoComplete="off" name="search" id="search" placeholder="Try Civil Engineer" />
+            </IconButton>
+              <input type="text" className="border-none p-1 flex-1 min-w-0 outline-none" autoComplete="off" name="search" id="search" placeholder="Try Civil Engineer" />
           </div>
-          <div className="flex gap-4 items-center justify-between bg-white rounded-full p-3" >
-              <input type="text" className="outline-none px-5" name="jobs" id="jobs" />
-              <ExpandMoreSharpIcon fontSize="large" />
+          <div className="flex gap-4 px-2 items-center justify-between bg-white rounded-full" >
+              <input placeholder="Jobs" type="text" className="min-w-0 p-1 outline-none px-5" name="jobs" id="jobs" />
+              <IconButton>
+                <ExpandMoreSharpIcon fontSize="large" />
+              </IconButton>
           </div>
             <div className="text-center">
-              <ArrowCircleRightSharpIcon fontSize="large" className="text-green-700"/>
+              <ArrowCircleRightSharpIcon fontSize="large" className="arrow-right text-green-700"/>
             </div>
           </div>
         </div>

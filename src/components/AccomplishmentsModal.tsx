@@ -46,10 +46,11 @@ const Accomplishments: React.FC<ModalProps> = ({ closeModal, setAccomplishmentsC
           <div>
             <CustomButton
               styles="text-white bg-black font-bold w-28 rounded-sm h-14 float-right"
-              name="Save"
               disabled={accomplishments === "" ? true : false}
               onClick={handleClick}
-            />
+            >
+              Save
+            </CustomButton>
           </div>
         </div>
       </div>

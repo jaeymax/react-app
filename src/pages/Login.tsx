@@ -14,12 +14,12 @@ const Login = () => {
 
           <div className="flex flex-col">
             <label htmlFor="email" className='text-gray-500' >Email</label>
-            <input type="email" className='rounded-sm border p-5 outline-none h-11' name="email" id="email" />
+            <input required type="email" className='rounded-sm border p-5 outline-none h-11' name="email" id="email" />
           </div>
 
           <div className="flex flex-col">
             <label htmlFor="password" className='text-gray-500' >Password</label>
-            <input type="password" className='rounded-sm border p-5 outline-none h-11' name="password" id="password" />
+            <input required type="password" className='rounded-sm border p-5 outline-none h-11' name="password" id="password" />
           </div>
 
           <div className="form-field"> 

@@ -22,8 +22,9 @@ const Navbar = () => {
         </div>
         
         <IconButton>
-          <MenuOutlinedIcon/>
+          <MenuOutlinedIcon fontSize='large' className='text-black cursor-pointer'/>
         </IconButton>
+        
       </div>
     </nav>
   )

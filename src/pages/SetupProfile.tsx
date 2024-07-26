@@ -19,7 +19,7 @@ const SetupProfile = () => {
 
   let navigate = useNavigate();
 
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth<600);
 
   const [workExperienceModal, setWorkExperienceModal] = useState(false);
 
@@ -89,7 +89,7 @@ const SetupProfile = () => {
 
   return (
     <div className="flex flex-col h-full relative">
-      <Header />
+      <Header hasBackArrow = {true} />
       <div className="flex gap-14 py-14 px-10">
         {!isSmallScreen && (
           <ProfileCompletion
@@ -162,17 +162,19 @@ const SetupProfile = () => {
           <div className="flex justify-between gap-5">
             <CustomButton
               styles="font-bold p-4 border w-full flex-1 rounded-sm hover:bg-gray-50 cursor-pointer"
-              name="I'll do it later"
               disabled={false}
               onClick={handleClick}
-            />
+            >
+             I'll do it later 
+            </CustomButton>
             <CustomButton
               // styles="font-bold border flex-1 text-white bg-black rounded-sm hover:bg-zinc-800 cursor-pointer"
               styles="text-white bg-black font-bold w-28 rounded-sm flex-1"
-              name="Done"
               disabled={isButtonDisabled()}
               onClick={handleClick}
-            />
+            >
+              Done
+            </CustomButton>
           </div>
         </div>
       </div>

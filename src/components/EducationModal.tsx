@@ -127,11 +127,12 @@ const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComp
 
         <div>
           <CustomButton
-            name="Save"
             onClick={handleClick}
             styles="text-white bg-black font-bold w-28 rounded-sm h-14 float-right"
             disabled={!ifAllFormFieldsFilled()}
-          />
+          >
+            Save
+          </CustomButton>
         </div>
       </div>
     </Modal>

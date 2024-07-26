@@ -108,11 +108,12 @@ const WorkExperience: React.FC<ModalProps> = ({ closeModal, setWorkExperienceCom
 
         <div>
           <CustomButton
-            name="Save"
             onClick={handleClick}
             styles="text-white bg-black font-bold w-28 rounded-sm h-14 float-right"
             disabled={!ifAllFormFieldsFilled()}
-          />
+          >
+            Save
+          </CustomButton>
         </div>
       </div>
     </Modal>

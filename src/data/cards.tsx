@@ -19,7 +19,7 @@ export const cards = [
       accountType:'Mentor',
       imageUrl:'https://cdn-icons-png.flaticon.com/512/2643/2643491.png',
       info:'A professional helping others to navigate their careers',
-      comingSoon:false,
+      comingSoon:true,
       isSelected:false,
       updateSelected: ()=>{}
     },
@@ -27,7 +27,7 @@ export const cards = [
       accountType:'Trainee',
       imageUrl:'https://cdn-icons-png.flaticon.com/512/12620/12620295.png',
       info:'An organisation offering training programs',
-      comingSoon:false,
+      comingSoon:true,
       isSelected:false,
       updateSelected: ()=>{}
     }
