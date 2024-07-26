@@ -14,7 +14,7 @@ import Login from './pages/Login';
 
 function App() {
   return (
-    <div className="App h-screen w-full overflow-hidden">
+    <div className="App h-screen w-full">
       <BrowserRouter>
         <Routes>
           <Route path ='/' element = {<Home/>}/>
