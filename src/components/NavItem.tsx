@@ -2,10 +2,6 @@ import { SvgIconProps } from "@mui/material"
 import React, { ReactNode } from "react"
 
 
-interface NavItemProps{
-    name:string,
-    icon:ReactNode;
-}
 
 const NavItem:React.FC<NavItemProps> = ({icon,name}) => {
   return (

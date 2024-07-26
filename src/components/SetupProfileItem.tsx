@@ -2,12 +2,7 @@ import { Add, WorkOutline } from '@mui/icons-material';
 import { ReactNode } from 'react';
 import { IconButton } from '@mui/material';
 
-interface SetupProfileProps{
-    icon:ReactNode,
-    name:string,
-    info:string,
-    openModal:()=>void;
-}
+
 
 const SetupProfileItem:React.FC<SetupProfileProps> = ({icon, name, info, openModal}) => {
 

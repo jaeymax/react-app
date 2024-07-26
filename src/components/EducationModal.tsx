@@ -3,10 +3,7 @@ import ModalHeader from "./ModalHeader";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";
 
-interface EducationModalProps {
-  closeModal: () => void;
-  setEducationComplete: React.Dispatch<React.SetStateAction<boolean>>;
-}
+
 
 const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComplete }) => {
   const [institution, setInstitution] = useState("");

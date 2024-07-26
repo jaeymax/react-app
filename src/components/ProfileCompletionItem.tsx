@@ -1,9 +1,6 @@
 
 
-interface ProfileCompletionItemProps{
-    name:string;
-    isProfileComplete?:boolean;
-}
+
 
 const ProfileCompletionItem:React.FC<ProfileCompletionItemProps> = ({name, isProfileComplete}) => {
 

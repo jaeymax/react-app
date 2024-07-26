@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-const useScreenSize = (screenSize:number) => {
+const useMinWidth = (screenSize:number) => {
 
-  const [isLarger, setIsLarger] = useState<boolean>(window.innerWidth > screenSize);  
+  const [minWidth, setMinWidth] = useState<boolean>(window.innerWidth >= screenSize);  
 
   useEffect(() => {
     const handleResize = () => {
-      setIsLarger(window.innerWidth > screenSize);
+      setMinWidth(window.innerWidth >= screenSize);
     };
 
     window.addEventListener('resize', handleResize);
@@ -19,7 +19,7 @@ const useScreenSize = (screenSize:number) => {
     };
   }, [screenSize]);
 
-  return isLarger;
+  return minWidth;
 }
 
-export default useScreenSize
+export default useMinWidth

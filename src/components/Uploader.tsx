@@ -1,10 +1,6 @@
 import React, { ChangeEvent, useState } from 'react'
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
-interface UploaderProps{
-    file:File|null;
-    updateFile:React.Dispatch<React.SetStateAction<File | null>>
-}
 
 const Uploader:React.FC<UploaderProps> = ({file, updateFile}) => {
 

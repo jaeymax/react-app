@@ -1,17 +1,32 @@
 import { ArrowBack } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import useMaxWidth from '../hooks/useMaxWidth';
+import { IconButton } from '@mui/material';
 
-interface HeaderProps{
-    hasBackArrow?:boolean;
-}
+
 
 const Header:React.FC<HeaderProps> = ({hasBackArrow}) => {
+
+  let navigate = useNavigate();
+
+  let maxWidth = useMaxWidth(768);
+
+  const goBack = () =>{
+     navigate(-1);
+  }
+
   return (
-    <header className="shadow-sm  h-24 flex items-center px-7 relative">
+    <header className="shadow-sm  min-h-24 flex items-center px-7 relative">
       {hasBackArrow && (
-       <div className='flex gap-3'>
-          <ArrowBack className='cursor-pointer' />
-         <p className='font-bold max-sm:hidden' >Back</p>
+       <div className='flex gap-3 items-center'>
+        <IconButton onClick={goBack} >
+          <ArrowBack className='text-black' />
+        </IconButton>
+          {maxWidth && (
+            <p className='font-bold max-sm:hidden' >Back</p>
+          )}
+         
        </div>
       )}
       <Link to={'/'} className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2' >

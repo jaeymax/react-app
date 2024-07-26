@@ -7,12 +7,9 @@ import FormatItalicIcon from "@mui/icons-material/FormatItalic";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import Modal from "./Modal";
 
-interface ModalProps {
-  closeModal: () => void;
-  setAccomplishmentsComplete:React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const Accomplishments: React.FC<ModalProps> = ({ closeModal, setAccomplishmentsComplete }) => {
+
+const Accomplishments: React.FC<AccomplishmentsModalProps> = ({ closeModal, setAccomplishmentsComplete }) => {
   const [accomplishments, setAccomplishments] = useState("");
 
   const handleClick = () => {
@@ -24,22 +21,22 @@ const Accomplishments: React.FC<ModalProps> = ({ closeModal, setAccomplishmentsC
     <Modal name={"Add Accomplishments"} closeModal={closeModal}>
       <div className="p-10">
         <div className="flex flex-col gap-6  ">
-          <div className="border rounded-sm  h-52">
+          <div className="border rounded-sm  ">
             <div className="border p-3 flex gap-2 items-center">
               <FormatBoldIcon className="cursor-pointer" />
               <FormatUnderlinedIcon className="cursor-pointer" />
               <FormatItalicIcon className="cursor-pointer" />
               <FormatListBulletedIcon className="cursor-pointer" />
             </div>
-            <div className="">
-              <textarea
+            <div className="h-40">
+              <textarea 
                 value={accomplishments}
                 onChange={(e) => setAccomplishments(e.target.value)}
                 placeholder="Type something"
-                className="w-full h-full resize-none outline-none p-5"
+                className="overflow-hidden w-full h-full resize-none outline-none p-5"
                 name="accomplishment"
                 id="accomplishment"
-              ></textarea>
+              />
             </div>
           </div>
 

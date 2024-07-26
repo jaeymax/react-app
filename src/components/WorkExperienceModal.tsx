@@ -4,12 +4,9 @@ import InfoIcon from "@mui/icons-material/Info";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";
 
-interface ModalProps {
-  closeModal: () => void;
-  setWorkExperienceComplete:React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const WorkExperience: React.FC<ModalProps> = ({ closeModal, setWorkExperienceComplete }) => {
+
+const WorkExperience: React.FC<WorkExperienceModalProps> = ({ closeModal, setWorkExperienceComplete }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");

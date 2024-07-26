@@ -14,12 +14,13 @@ import AccomplishmentsModal from "../components/AccomplishmentsModal";
 import UploadResumeModal from "../components/UploadResumeModal";
 import CustomButton from "../components/CustomButton";
 import { useNavigate } from "react-router-dom";
+import useMaxWidth from "../hooks/useMaxWidth";
 
 const SetupProfile = () => {
 
   let navigate = useNavigate();
 
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth<600);
+  let maxWidth = useMaxWidth(640);
 
   const [workExperienceModal, setWorkExperienceModal] = useState(false);
 
@@ -69,15 +70,6 @@ const SetupProfile = () => {
     setUploadModal(false);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const isButtonDisabled = () =>{
     return !(educationComplete && workExperienceComplete && uploadComplete && accomplishmentsComplete);
@@ -91,7 +83,7 @@ const SetupProfile = () => {
     <div className="flex flex-col h-full relative">
       <Header hasBackArrow = {true} />
       <div className="flex gap-14 py-14 px-10">
-        {!isSmallScreen && (
+        {!maxWidth && (
           <ProfileCompletion
             isEducationComplete={educationComplete}
             isWorkExperienceComplete={workExperienceComplete}
@@ -111,7 +103,7 @@ const SetupProfile = () => {
 
         <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-0">
           <h2 className="font-bold text-2xl">Set up your profile.</h2>
-          {isSmallScreen && <ProfileCompletion fullWidth={true} hide={true} />}
+          {maxWidth && <ProfileCompletion fullWidth={true} hide={true} />}
           <div className="profile-items flex flex-col gap-5">
             <SetupProfileItem
               openModal={openEducationModal}
@@ -159,7 +151,7 @@ const SetupProfile = () => {
               info="CV, portfolio"
             />
           </div>
-          <div className="flex justify-between gap-5">
+          <div className="flex justify-between gap-5 max-sm:border-t-2 max-sum:py-10">
             <CustomButton
               styles="font-bold p-4 border w-full flex-1 rounded-sm hover:bg-gray-50 cursor-pointer"
               disabled={false}

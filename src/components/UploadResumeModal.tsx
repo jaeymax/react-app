@@ -5,12 +5,9 @@ import { useState } from "react";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";
 
-interface ModalProps {
-  closeModal: () => void;
-  setUploadComplete:React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const UploadResume: React.FC<ModalProps> = ({ closeModal, setUploadComplete }) => {
+
+const UploadResume: React.FC<UploadResumeModalProps> = ({ closeModal, setUploadComplete }) => {
   const [resume, setResume] = useState<File | null>(null);
   const [other, setOther] = useState<File | null>(null);
 

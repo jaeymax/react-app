@@ -1,14 +1,7 @@
 
 import ProfileCompletionItem from './ProfileCompletionItem';
 
-interface ProfileCompletionProps{
-    hide:boolean;
-    fullWidth?:boolean;
-    isEducationComplete?:boolean;
-    isWorkExperienceComplete?:boolean;
-    isAccomplishmentsComplete?:boolean;
-    isUploadComplete?:boolean;
-}
+
 
 const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth, isEducationComplete, isWorkExperienceComplete, isAccomplishmentsComplete, isUploadComplete}) => {
 

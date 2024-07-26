@@ -1,11 +1,6 @@
 import React from 'react'
 
-interface CareerStatusItemProps{
-    name:string;
-    index:number;
-    isSelected:boolean;
-    updateSelectedStatus:React.Dispatch<React.SetStateAction<number | null>>;
-}
+
 
 const CareerStatusItem:React.FC<CareerStatusItemProps> = ({name, index, isSelected, updateSelectedStatus}) => {
 

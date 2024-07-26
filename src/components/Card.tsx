@@ -7,15 +7,7 @@ import React from 'react'
 // trainee2 https://image.pngaaa.com/350/5091350-middle.png
 //300px 200px 
 // 
-interface CardProps{
-    index:number,
-    accountType:string,
-    info:string;
-    comingSoon:boolean;
-    imageUrl:string;
-    isSelected:boolean;
-    updateSelectedCard:React.Dispatch<React.SetStateAction<number|null>>;
-}
+
 
 const Card:React.FC<CardProps> = ({index, accountType, info, comingSoon, imageUrl, isSelected, updateSelectedCard}) => {
 
