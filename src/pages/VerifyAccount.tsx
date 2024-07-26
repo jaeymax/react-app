@@ -17,7 +17,7 @@ const VerifyAccount = () => {
     
     navigateToAccountType();
 
-  },[])
+  },[navigate])
 
   return (
     <div className="flex flex-col h-full" >

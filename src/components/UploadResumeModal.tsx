@@ -11,10 +11,7 @@ const UploadResume: React.FC<UploadResumeModalProps> = ({ closeModal, setUploadC
 
   const allFilesUploaded = () => {
     const result = resume && other;
-    if (result == null) {
-      return false;
-    }
-    return true;
+    return result != null;
   };
 
   const handleClick = () => {

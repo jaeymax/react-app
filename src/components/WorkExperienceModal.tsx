@@ -14,8 +14,7 @@ const WorkExperience: React.FC<WorkExperienceModalProps> = ({ closeModal, setWor
 
   const ifAllFormFieldsFilled = (): boolean => {
     const result = jobTitle && company && startDate && endDate;
-    if (result == "") return false;
-    return true;
+    return result !== "";
   };
 
   const handleClick = () => {

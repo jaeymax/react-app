@@ -179,7 +179,7 @@ const SetupProfile = () => {
               info="CV, portfolio"
             />
           </div>
-          <div className="flex justify-between gap-5 max-sm:border-t-2 max-sum:py-10">
+          <div className="flex justify-between gap-5">
             <CustomButton
               styles="font-bold p-4 border w-full flex-1 rounded-sm hover:bg-gray-50 cursor-pointer"
               disabled={false}
