@@ -1,5 +1,4 @@
-import { SvgIconProps } from "@mui/material"
-import React, { ReactNode } from "react"
+import React from "react"
 
 
 

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ModalHeader from "./ModalHeader";
 import InfoIcon from "@mui/icons-material/Info";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";

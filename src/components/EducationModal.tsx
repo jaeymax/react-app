@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ModalHeader from "./ModalHeader";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";
 

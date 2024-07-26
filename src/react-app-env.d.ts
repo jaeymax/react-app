@@ -41,16 +41,16 @@ interface NavItemProps{
 interface ProfileCompletionProps{
     hide:boolean;
     fullWidth?:boolean;
-    isEducationComplete?:boolean;
-    isWorkExperienceComplete?:boolean;
-    isAccomplishmentsComplete?:boolean;
-    isUploadComplete?:boolean;
+    isEducationComplete:boolean;
+    isWorkExperienceComplete:boolean;
+    isAccomplishmentsComplete:boolean;
+    isUploadComplete:boolean;
 }
 
 
 interface ProfileCompletionItemProps{
     name:string;
-    isProfileComplete?:boolean;
+    isProfileComplete:boolean;
 }
 
 interface SetupProfileProps{

@@ -10,7 +10,7 @@ const CreateAccount = () => {
   const handleSubmit = (e:FormEvent)=>{
     e.preventDefault();
 
-    navigate('/account-type');
+    navigate('/verify-account');
   }
 
   return (

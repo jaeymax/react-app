@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ModalHeader from "./ModalHeader";
 import CustomButton from "./CustomButton";
 import FormatBoldIcon from "@mui/icons-material/FormatBold";
 import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";

@@ -1,5 +1,3 @@
-import { IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
 import React, { ReactNode } from 'react'
 import ModalHeader from './ModalHeader';
 

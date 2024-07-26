@@ -6,7 +6,7 @@ import StarHalfIcon from "@mui/icons-material/StarHalf";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { WorkOutline } from "@mui/icons-material";
 import EducationModal from "../components/EducationModal";
 import WorkExperienceModal from "../components/WorkExperienceModal";
@@ -17,7 +17,6 @@ import { useNavigate } from "react-router-dom";
 import useMaxWidth from "../hooks/useMaxWidth";
 
 const SetupProfile = () => {
-
   let navigate = useNavigate();
 
   let maxWidth = useMaxWidth(640);
@@ -70,18 +69,22 @@ const SetupProfile = () => {
     setUploadModal(false);
   };
 
+  const isButtonDisabled = () => {
+    return !(
+      educationComplete &&
+      workExperienceComplete &&
+      uploadComplete &&
+      accomplishmentsComplete
+    );
+  };
 
-  const isButtonDisabled = () =>{
-    return !(educationComplete && workExperienceComplete && uploadComplete && accomplishmentsComplete);
-  }
-
-  const handleClick = () =>{
-     navigate('/');
-  }
+  const handleClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className="flex flex-col h-full relative">
-      <Header hasBackArrow = {true} />
+      <Header hasBackArrow={true} />
       <div className="flex gap-14 py-14 px-10">
         {!maxWidth && (
           <ProfileCompletion
@@ -92,18 +95,43 @@ const SetupProfile = () => {
             hide={false}
           />
         )}
-        {educationModal && <EducationModal closeModal={closeEducationModal} setEducationComplete = {setEducationComplete} />}
+        {educationModal && (
+          <EducationModal
+            closeModal={closeEducationModal}
+            setEducationComplete={setEducationComplete}
+          />
+        )}
         {workExperienceModal && (
-          <WorkExperienceModal setWorkExperienceComplete = {setWorkExperienceComplete} closeModal={closeWorkExperienceModal} />
+          <WorkExperienceModal
+            setWorkExperienceComplete={setWorkExperienceComplete}
+            closeModal={closeWorkExperienceModal}
+          />
         )}
         {accomplishmentsModal && (
-          <AccomplishmentsModal closeModal={closeAccomplishmentsModal} setAccomplishmentsComplete = {setAccomplishmentsComplete} />
+          <AccomplishmentsModal
+            closeModal={closeAccomplishmentsModal}
+            setAccomplishmentsComplete={setAccomplishmentsComplete}
+          />
         )}
-        {uploadModal && <UploadResumeModal setUploadComplete = {setUpLoadComplete} closeModal={closeUploadModal} />}
+        {uploadModal && (
+          <UploadResumeModal
+            setUploadComplete={setUpLoadComplete}
+            closeModal={closeUploadModal}
+          />
+        )}
 
         <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-0">
           <h2 className="font-bold text-2xl">Set up your profile.</h2>
-          {maxWidth && <ProfileCompletion fullWidth={true} hide={true} />}
+          {maxWidth && (
+            <ProfileCompletion
+              isAccomplishmentsComplete={accomplishmentsComplete}
+              isEducationComplete = {educationComplete}
+              isUploadComplete = {uploadComplete}
+              isWorkExperienceComplete = {workExperienceComplete}
+              fullWidth={true}
+              hide={true}
+            />
+          )}
           <div className="profile-items flex flex-col gap-5">
             <SetupProfileItem
               openModal={openEducationModal}
@@ -157,7 +185,7 @@ const SetupProfile = () => {
               disabled={false}
               onClick={handleClick}
             >
-             I'll do it later 
+              I'll do it later
             </CustomButton>
             <CustomButton
               // styles="font-bold border flex-1 text-white bg-black rounded-sm hover:bg-zinc-800 cursor-pointer"

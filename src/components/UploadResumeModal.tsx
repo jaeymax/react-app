@@ -1,5 +1,3 @@
-import ModalHeader from "./ModalHeader";
-import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import Uploader from "./Uploader";
 import { useState } from "react";
 import CustomButton from "./CustomButton";

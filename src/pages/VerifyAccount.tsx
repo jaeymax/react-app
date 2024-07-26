@@ -10,13 +10,14 @@ const VerifyAccount = () => {
     
     // This function navigates to the career type page 2seconds after being on the verify account page
     const navigateToAccountType = () =>{
-         setInterval(()=>{
+         setTimeout(()=>{
            navigate('/account-type');
          }, 3000);
     }
     
+    navigateToAccountType();
 
-  },[navigate])
+  },[])
 
   return (
     <div className="flex flex-col h-full" >

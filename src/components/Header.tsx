@@ -1,6 +1,5 @@
 import { ArrowBack } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import useMaxWidth from '../hooks/useMaxWidth';
 import { IconButton } from '@mui/material';
 

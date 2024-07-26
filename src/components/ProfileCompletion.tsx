@@ -13,8 +13,8 @@ const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth, is
       <div className={`profile-completion-list ${hide?'hidden':''}`}>
           <ProfileCompletionItem name = 'Education'  isProfileComplete = {isEducationComplete} />
           <ProfileCompletionItem name = 'Work Experience' isProfileComplete = {isWorkExperienceComplete} />
-          <ProfileCompletionItem name = 'Interest & Skills'  />
-          <ProfileCompletionItem name = 'Certifications' />
+          <ProfileCompletionItem name = 'Interest & Skills' isProfileComplete = {false}  />
+          <ProfileCompletionItem name = 'Certifications'  isProfileComplete = {false} />
           <ProfileCompletionItem name = 'Accomplishments' isProfileComplete = {isAccomplishmentsComplete} />
           <ProfileCompletionItem name = 'Upload Resume' isProfileComplete = {isUploadComplete} />
       </div>
