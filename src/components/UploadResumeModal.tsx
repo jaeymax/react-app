@@ -5,7 +5,7 @@ import Modal from "./Modal";
 
 
 
-const UploadResume: React.FC<UploadResumeModalProps> = ({ closeModal, setUploadComplete }) => {
+const UploadResume: React.FC<UploadResumeModalProps> = ({ closeModal, setUploadComplete, updateProgress, isUploadComplete }) => {
   const [resume, setResume] = useState<File | null>(null);
   const [other, setOther] = useState<File | null>(null);
 
@@ -16,6 +16,7 @@ const UploadResume: React.FC<UploadResumeModalProps> = ({ closeModal, setUploadC
 
   const handleClick = () => {
     setUploadComplete(true);
+    updateProgress(isUploadComplete)
     closeModal();
   };
 

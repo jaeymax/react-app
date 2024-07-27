@@ -1,12 +1,3 @@
-import React from 'react'
-
-// Employer https://cdn-icons-png.flaticon.com/512/1693/1693866.png
-// trainee https://cdn-icons-png.flaticon.com/512/12620/12620295.png
-// Mentor https://cdn-icons-png.flaticon.com/512/2643/2643491.png
-// Candidate https://cdn-icons-png.flaticon.com/512/4470/4470321.png
-// trainee2 https://image.pngaaa.com/350/5091350-middle.png
-//300px 200px 
-// 
 
 
 const Card:React.FC<CardProps> = ({index, accountType, info, comingSoon, imageUrl, isSelected, updateSelectedCard}) => {

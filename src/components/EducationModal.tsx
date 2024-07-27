@@ -1,10 +1,12 @@
 import { useState } from "react";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";
+import { IconButton } from "@mui/material";
+import { ExpandMoreOutlined } from "@mui/icons-material";
 
 
 
-const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComplete }) => {
+const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComplete, updateProgress,isEducationComplete }) => {
   const [institution, setInstitution] = useState("");
   const [qualification, setQualification] = useState("");
   const [courseCatetory, setCourseCategory] = useState("");
@@ -26,6 +28,7 @@ const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComp
 
   const handleClick = () => {
     setEducationComplete(true);
+    updateProgress(isEducationComplete)
     closeModal(); 
   };
 
@@ -38,15 +41,20 @@ const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComp
           <label className="text-gray-500" htmlFor="institution">
             Institution
           </label>
-          <input
-            onChange={(e) => setInstitution(e.target.value)}
-            value={institution}
-            className="border outline-none p-5 rounded-sm h-16"
-            placeholder="Search institution"
-            type="text"
-            name="institution"
-            id="institution"
-          />
+          <div className="flex border items-center rounded-sm" >
+            <input
+              onChange={(e) => setInstitution(e.target.value)}
+              value={institution}
+              className="flex-1 outline-none min-w-0 p-5 rounded-sm h-16"
+              placeholder="Search institution"
+              type="text"
+              name="institution"
+              id="institution"
+            />
+            <IconButton>
+              <ExpandMoreOutlined className="text-black" />
+            </IconButton>
+          </div>
         </div>
 
         <div className="flex gap-3">
@@ -54,27 +62,37 @@ const Education: React.FC<EducationModalProps> = ({ closeModal, setEducationComp
             <label className="text-gray-500" htmlFor="qualification">
               Qualification
             </label>
+            <div className="flex items-center border rounded-sm" >
             <input
               onChange={(e) => setQualification(e.target.value)}
               value={qualification}
-              className="border outline-none p-5 rounded-sm h-14"
+              className="flex-1 min-w-0 outline-none p-5 rounded-sm h-14"
               type="text"
               name="qualification"
               id="qualification"
             />
+          <IconButton>
+            <ExpandMoreOutlined className="text-black" />
+          </IconButton>
+            </div>
           </div>
           <div className="flex flex-col w-full min-w-0">
             <label className="text-gray-500" htmlFor="course-category">
               Course Category
             </label>
+            <div className="flex items-center border rounded-sm" >
             <input
               onChange={(e) => setCourseCategory(e.target.value)}
               value={courseCatetory}
-              className="border outline-none p-5 rounded-sm h-14"
+              className="flex-1 min-w-0 outline-none p-5 rounded-sm h-14"
               type="text"
               name="course-category"
               id="course-category"
             />
+              <IconButton>
+            <ExpandMoreOutlined className="text-black" />
+            </IconButton>
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,3 @@
-import React from "react"
-
 
 
 const NavItem:React.FC<NavItemProps> = ({icon,name}) => {

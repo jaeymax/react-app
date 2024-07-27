@@ -4,7 +4,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 
-const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth, isEducationComplete, isWorkExperienceComplete, isAccomplishmentsComplete, isUploadComplete}) => {
+const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, progress, fullWidth, isEducationComplete, isWorkExperienceComplete, isAccomplishmentsComplete, isUploadComplete}) => {
 
   return (
     <div className={`profile-completion w-[350px] custom-green h-fit rounded-sm ${fullWidth?'w-full':''}`} > 
@@ -12,8 +12,8 @@ const ProfileCompletion:React.FC<ProfileCompletionProps> = ({hide, fullWidth, is
          <h2 className='font-bold flex-1' >Profile Completion</h2>
          <div className='  grid place-items-center max-w-[100px] max-h-[75px] w-full h-full  min-w-0 min-h-0' >
          <CircularProgressbar
-          value={0}
-          text='0%'
+          value={parseInt(((progress / 6)* 100).toFixed(2))}
+          text={`${((progress/6)*100).toFixed(0)}%`}
           className='w-full h-full'
           styles={{
             path:{

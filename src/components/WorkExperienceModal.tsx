@@ -2,10 +2,12 @@ import { useState } from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import CustomButton from "./CustomButton";
 import Modal from "./Modal";
+import { ExpandMoreOutlined } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 
 
 
-const WorkExperience: React.FC<WorkExperienceModalProps> = ({ closeModal, setWorkExperienceComplete }) => {
+const WorkExperience: React.FC<WorkExperienceModalProps> = ({ closeModal, setWorkExperienceComplete, updateProgress, isWorkExperienceComplete }) => {
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -19,6 +21,7 @@ const WorkExperience: React.FC<WorkExperienceModalProps> = ({ closeModal, setWor
 
   const handleClick = () => {
     setWorkExperienceComplete(true);
+    updateProgress(isWorkExperienceComplete);
     closeModal();
   };
 
@@ -51,15 +54,20 @@ const WorkExperience: React.FC<WorkExperienceModalProps> = ({ closeModal, setWor
           <label className="text-gray-500" htmlFor="company">
             Company
           </label>
+          <div className="border rounded-sm flex items-center" >
           <input
             onChange={(e) => setCompany(e.target.value)}
             value={company}
-            className="border outline-none p-5 rounded-sm h-14"
+            className=" flex-1 outline-none min-w-0 p-5 rounded-sm h-14"
             placeholder="Search company"
             type="text"
             name="company"
             id="company"
           />
+          <IconButton  >
+            <ExpandMoreOutlined className="text-black" />
+          </IconButton>
+          </div>
         </div>
 
         <div className="flex gap-3">

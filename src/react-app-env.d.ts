@@ -45,6 +45,7 @@ interface ProfileCompletionProps{
     isWorkExperienceComplete:boolean;
     isAccomplishmentsComplete:boolean;
     isUploadComplete:boolean;
+    progress:number;
 }
 
 
@@ -68,18 +69,33 @@ interface UploaderProps{
 interface AccomplishmentsModalProps {
     closeModal: () => void;
     setAccomplishmentsComplete:React.Dispatch<React.SetStateAction<boolean>>;
+    isAccomplishmentsComplete:boolean;
+    updateProgress:(progressType:boolean)=>void;
   }
 
 interface EducationModalProps {
     closeModal: () => void;
     setEducationComplete: React.Dispatch<React.SetStateAction<boolean>>;
+    isEducationComplete:boolean;
+    updateProgress:(progressType:boolean)=>void;
 }
 
 interface UploadResumeModalProps {
     closeModal: () => void;
     setUploadComplete:React.Dispatch<React.SetStateAction<boolean>>;
+    isUploadComplete:boolean;
+    updateProgress:(progressType:boolean)=>void;
 }
 interface WorkExperienceModalProps {
     closeModal: () => void;
     setWorkExperienceComplete:React.Dispatch<React.SetStateAction<boolean>>;
-  }
+    isWorkExperienceComplete:boolean;
+    updateProgress:(progressType:boolean)=>void;
+}
+
+interface FormatIconProps{
+    children:ReactNode;
+    index:number;
+    selectedIcon:number|null;
+    updateSelectedIcon:React.Dispatch<React.SetStateAction<number | null>>
+}

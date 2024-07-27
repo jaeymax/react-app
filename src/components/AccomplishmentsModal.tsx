@@ -1,18 +1,21 @@
 import { useState } from "react";
 import CustomButton from "./CustomButton";
-import FormatBoldIcon from "@mui/icons-material/FormatBold";
-import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
-import FormatItalicIcon from "@mui/icons-material/FormatItalic";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import Modal from "./Modal";
+import { formatIcons } from "../data/formatIcons";
+import FormatIcon from "./FormatIcon";
 
-
-
-const Accomplishments: React.FC<AccomplishmentsModalProps> = ({ closeModal, setAccomplishmentsComplete }) => {
+const Accomplishments: React.FC<AccomplishmentsModalProps> = ({
+  closeModal,
+  setAccomplishmentsComplete,
+  isAccomplishmentsComplete,
+  updateProgress
+}) => {
   const [accomplishments, setAccomplishments] = useState("");
+  const [selectedIcon, setSelectedIcon] = useState<null | number>(null);
 
   const handleClick = () => {
     setAccomplishmentsComplete(true);
+    updateProgress(isAccomplishmentsComplete)
     closeModal();
   };
 
@@ -20,15 +23,21 @@ const Accomplishments: React.FC<AccomplishmentsModalProps> = ({ closeModal, setA
     <Modal name={"Add Accomplishments"} closeModal={closeModal}>
       <div className="p-10">
         <div className="flex flex-col gap-6  ">
-          <div className="border rounded-sm  ">
+          <div className="b rounded-sm  ">
             <div className="border p-3 flex gap-2 items-center">
-              <FormatBoldIcon className="cursor-pointer" />
-              <FormatUnderlinedIcon className="cursor-pointer" />
-              <FormatItalicIcon className="cursor-pointer" />
-              <FormatListBulletedIcon className="cursor-pointer" />
+              {formatIcons.map((icon, index) => (
+                <FormatIcon
+                  updateSelectedIcon={setSelectedIcon}
+                  key={index}
+                  selectedIcon={selectedIcon}
+                  index={index}
+                >
+                  {icon}
+                </FormatIcon>
+              ))}
             </div>
-            <div className="h-40">
-              <textarea 
+            <div className="h-40 border">
+              <textarea
                 value={accomplishments}
                 onChange={(e) => setAccomplishments(e.target.value)}
                 placeholder="Type something"
@@ -38,7 +47,6 @@ const Accomplishments: React.FC<AccomplishmentsModalProps> = ({ closeModal, setA
               />
             </div>
           </div>
-
           <div>
             <CustomButton
               styles="text-white bg-black font-bold w-28 rounded-sm h-14 float-right"

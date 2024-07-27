@@ -1,5 +1,3 @@
-import React from 'react'
-
 
 
 const CustomButton:React.FC<CustomButtonProps> = ({disabled, onClick,  styles, children}) => {

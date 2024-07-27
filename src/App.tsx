@@ -10,7 +10,7 @@ import Login from './pages/Login';
 
 function App() {
   return (
-    <div className="App h-screen w-full">
+    <div className="App h-screen w-full relative">
       <BrowserRouter>
         <Routes>
           <Route path ='/' element = {<Home/>}/>

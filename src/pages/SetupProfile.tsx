@@ -37,6 +37,15 @@ const SetupProfile = () => {
 
   const [uploadComplete, setUpLoadComplete] = useState(false);
 
+  const [progress, setProgress] = useState(0);
+
+  // 
+  const updateProgress = (progressType:boolean) =>{
+    if(progressType == false){
+      setProgress(progress+1);
+    }
+  }
+
   const openWorkExperienceModal = () => {
     setWorkExperienceModal(true);
   };
@@ -83,9 +92,9 @@ const SetupProfile = () => {
   };
 
   return (
-    <div className="flex flex-col h-full relative">
+    <div className="flex flex-col h-full">
       <Header hasBackArrow={true} />
-      <div className="flex gap-14 py-14 px-10">
+      <div className="flex gap-14 py-14 px-10 ">
         {!maxWidth && (
           <ProfileCompletion
             isEducationComplete={educationComplete}
@@ -93,37 +102,47 @@ const SetupProfile = () => {
             isAccomplishmentsComplete={accomplishmentsComplete}
             isUploadComplete={uploadComplete}
             hide={false}
+            progress = {progress}
           />
         )}
         {educationModal && (
           <EducationModal
             closeModal={closeEducationModal}
             setEducationComplete={setEducationComplete}
+            isEducationComplete = {educationComplete}
+            updateProgress = {()=>updateProgress(educationComplete)}
           />
         )}
         {workExperienceModal && (
           <WorkExperienceModal
             setWorkExperienceComplete={setWorkExperienceComplete}
             closeModal={closeWorkExperienceModal}
+            isWorkExperienceComplete = {workExperienceComplete}
+            updateProgress = {()=>updateProgress(workExperienceComplete)}
           />
         )}
         {accomplishmentsModal && (
           <AccomplishmentsModal
+            isAccomplishmentsComplete = {accomplishmentsComplete}
             closeModal={closeAccomplishmentsModal}
             setAccomplishmentsComplete={setAccomplishmentsComplete}
+            updateProgress = {()=>updateProgress(accomplishmentsComplete)}
           />
         )}
         {uploadModal && (
           <UploadResumeModal
+            isUploadComplete = {uploadComplete}
             setUploadComplete={setUpLoadComplete}
             closeModal={closeUploadModal}
+            updateProgress = {()=>updateProgress(uploadComplete)}
           />
         )}
 
-        <div className="flex flex-col gap-6 w-full setup-profile mx-auto  max-w-[650px] min-w-0">
+        <div className="flex flex-col gap-6 w-full mx-auto max-w-[650px] min-w-0">
           <h2 className="font-bold text-2xl">Set up your profile.</h2>
           {maxWidth && (
             <ProfileCompletion
+              progress={progress}
               isAccomplishmentsComplete={accomplishmentsComplete}
               isEducationComplete = {educationComplete}
               isUploadComplete = {uploadComplete}
@@ -179,7 +198,8 @@ const SetupProfile = () => {
               info="CV, portfolio"
             />
           </div>
-          <div className="flex justify-between gap-5">
+          {/* border max-sm:absolute max-sm:bottom-0 max-sm:right-0 max-sm:left-0 border-black bg-red-400 */}
+          <div className="flex justify-between gap-5 ">
             <CustomButton
               styles="font-bold p-4 border w-full flex-1 rounded-sm hover:bg-gray-50 cursor-pointer"
               disabled={false}

@@ -10,7 +10,7 @@ interface ModalProps{
 
 const Modal:React.FC<ModalProps> = ({name, children, closeModal}) => {
   return (
-    <div className='flex flex-col bg-white rounded-md absolute top-0 left-0 right-0 bottom-0 z-10' >
+    <div className='flex flex-col bg-white rounded-md shadow-2xl shadow-gray-800 absolute top-5 left-5 right-5 bottom-5 z-10' >
     <ModalHeader name={name} closeModal={closeModal} />
        {children}
     </div>
