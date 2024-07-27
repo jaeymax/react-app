@@ -41,7 +41,7 @@ const SetupProfile = () => {
 
   // 
   const updateProgress = (progressType:boolean) =>{
-    if(progressType == false){
+    if(progressType === false){
       setProgress(progress+1);
     }
   }

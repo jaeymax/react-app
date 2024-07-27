@@ -6,7 +6,7 @@ const FormatIcon:React.FC<FormatIconProps> = ({index,selectedIcon, children, upd
   const [selected, setSelected] = useState(false);
 
   const handleClick = () =>{
-    if(index == selectedIcon){
+    if(index === selectedIcon){
         updateSelectedIcon(null);
         setSelected(false);
     }
